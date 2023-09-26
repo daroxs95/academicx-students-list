@@ -21,6 +21,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.6.1",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",

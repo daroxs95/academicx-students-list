@@ -9,8 +9,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  surge-deploy:
-    name: Deploy to surge.sh
+  app-deploy:
+    permissions: write-all
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,12 +22,15 @@ jobs:
         with:
           node-version: 18.x
           cache: 'npm'
-      - run: npm
-      - run: npm build
-      - name: Deploy to students.surge.sh
-        uses: dswistowski/surge-sh-action@v1
+      - run: npm i
+      # - run: npm run build
+      - run: npx @cloudflare/next-on-pages@1
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
         with:
-          domain: 'students.surge.sh'
-          project: './out'
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: academicx-students-list
+          directory: .vercel/output/static
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
