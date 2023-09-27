@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   pull_request:
-    branches: ["master"]
+    branches: ['master', 'develop']
   workflow_dispatch:
 
 concurrency:
@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
       - run: npm i
       # - run: npm run test
       - run: npm run build

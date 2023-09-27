@@ -1,0 +1,38 @@
+.container {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--app-s-space);
+}
+
+.container:hover img {
+  transform: scale(1.05);
+}
+
+.active {
+  color: var(--color-primary);
+  transition: color 0.2s var(--custom-easing);
+}
+
+.image_container img {
+  border-radius: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-border);
+  transition: transform 0.2s var(--custom-easing);
+}
+
+.active img {
+  border-color: var(--color-primary);
+}
+
+.name {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.program {
+  text-align: center;
+}

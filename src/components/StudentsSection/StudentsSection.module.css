@@ -1,0 +1,24 @@
+.container {
+  margin: var(--app-m-space) 0;
+}
+
+.student_detail {
+  display: flex;
+  justify-content: center;
+  min-height: 420px;
+  margin: var(--app-m-space) 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .student_detail {
+    min-height: 300px;
+  }
+}
+
+.student_list {
+  margin: 0;
+}
+
+.student_card {
+  margin: auto;
+}
