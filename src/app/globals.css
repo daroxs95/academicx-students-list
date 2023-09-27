@@ -2,23 +2,34 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --color-background: #FFFFFF;
+  --color-background: #ffffff;
   --color-background-darker: #fbfbfb;
   --color-foreground-text: #535353;
-  --color-primary: #685DC5;
+  --color-primary: #685dc5;
   --color-primary-dark: #3b1f81;
   --color-support: #60a269;
-  --color-border: #DADADA;
+  --color-border: #dadada;
 
   --app-max-width: 1440px;
   --border-radius: 5px;
-  --app-s-space: 18px;
-  --app-m-space: 40px;
-  --app-b-space: 160px;
+  --app-s-space: 10px;
+  --app-m-space: 20px;
+  --app-b-space: 40px;
+
+  --custom-easing: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --app-s-space: 18px;
+    --app-m-space: 40px;
+    --app-b-space: 160px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {}
+  :root {
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,4 +55,21 @@ a {
 body {
   color: var(--color-foreground-text);
   background-color: var(--color-background);
+}
+
+/* Animations */
+.fade_in {
+  animation: fadeInAnimation var(--custom-easing) 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
