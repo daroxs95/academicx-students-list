@@ -1,0 +1,17 @@
+.container {
+}
+
+.name {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.date {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.place {
+  text-align: center;
+  font-size: 1.2rem;
+}
